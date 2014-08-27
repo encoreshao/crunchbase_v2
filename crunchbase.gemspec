@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["encore@ekohe.com"]
   spec.summary       = %q{ Wrapper for Crunchbase API v2 }
   spec.description   = %q{ Wrapper for Crunchbase API v2 }
-  spec.homepage      = "https://github.com/encoreshao/crunchbase"
+  spec.homepage      = "https://github.com/encoreshao/crunchbase_v2"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
