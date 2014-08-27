@@ -1,14 +1,14 @@
 = Crunchbase API
 
-    Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
+Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
 
 == Installation
 
-    Add this line to your application's Gemfile:
+Add this line to your application's Gemfile:
 
     gem 'crunchbase', github: 'encoreshao/crunchbase_v2'
 
-    And then execute:
+And then execute:
 
     $ bundle
 
@@ -16,8 +16,8 @@
 
 Config your user_key, debug somewhere like development.rb.
 
-Crunchbase::API.key   = 'YOUR_API_KEY'
-Crunchbase::API.debug = false
+  Crunchbase::API.key   = 'YOUR_API_KEY'
+  Crunchbase::API.debug = false
 
 === Search
 
@@ -48,7 +48,7 @@ Get information by the permalink, Example:
     company.competitors_total_items   Return competitors total items count
     company.competitors.each do |e|
       competitor = a.fetch
-      puts competitor.inspect
+      puts competitor.name
     end
     OR
     company.websites
@@ -69,7 +69,7 @@ If you want all competitors items, Please do:
 
   people = Crunchbase::Person.list( page )
 
-  people.results.inspect
+  people.results
  
   [#<Crunchbase::SearchResult:0x007fd16ae18b40 ...>, 
   #<Crunchbase::SearchResult:0x007fd16ae18870 ...>, 
@@ -80,7 +80,7 @@ If you want all competitors items, Please do:
 
 === How to use Location & Category .... 
   
-  Very simple [ such as a Person ]
+Such as a Person
     
 == Contributing
 
