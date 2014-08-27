@@ -63,22 +63,24 @@ If you want all competitors items, Please do:
 
 === People
     
-person = Crunchbase::Person.get( permalink )
+  person = Crunchbase::Person.get( permalink )
 
-#<Crunchbase::Person:0x007fc95bca3880 @type_name="Person" ..... > 
+  #<Crunchbase::Person:0x007fc95bca3880 @type_name="Person" ..... > 
 
-people = Crunchbase::Person.list( page )
+  people = Crunchbase::Person.list( page )
 
-people.results.inspect
-[ 
-  #<Crunchbase::SearchResult:0x007fd16ae18b40 ...>, 
+  people.results.inspect
+ 
+  [#<Crunchbase::SearchResult:0x007fd16ae18b40 ...>, 
   #<Crunchbase::SearchResult:0x007fd16ae18870 ...>, 
   #<Crunchbase::SearchResult:0x007fd16ae185a0 ...>, 
   #<Crunchbase::SearchResult:0x007fd16ae182f8 ...>
-  ......
-]
+  ......]
 
-=== How to use Location & Category .... Very simple [ such as a Person ]
+
+=== How to use Location & Category .... 
+  
+  Very simple [ such as a Person ]
     
 == Contributing
 
