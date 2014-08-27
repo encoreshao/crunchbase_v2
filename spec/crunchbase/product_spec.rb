@@ -12,16 +12,17 @@ module Crunchbase
         @all_products.per_page.should == 1000
         @all_products.current_page.should == 1
         @all_products.size.should == 16
-        @all_products.items.count.should == 16
+        @all_products.results.count.should == 16
+        puts @all_products.results.inspect
       end
     end
     
-    it "should pull from web api" do
-      product = Product.get("internet-org")
+    # it "should pull from web api" do
+    #   product = Product.get("internet-org")
 
-      product.name.should == "Internet.org"
-      product.permalink.should == "internet-org"
-    end
+    #   product.name.should == "Internet.org"
+    #   product.permalink.should == "internet-org"
+    # end
 
   end
 end

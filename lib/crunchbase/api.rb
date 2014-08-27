@@ -20,6 +20,7 @@ module Crunchbase
     @base_url       = 'http://api.crunchbase.com'
     @site_url       = "http://www.crunchbase.com"
     @image_url      = "http://images.crunchbase.com/"
+    @debug          = false
 
     # Must be overridden in subclasses
     RESOURCE_NAME         = "undefined"
@@ -85,7 +86,7 @@ module Crunchbase
       
       uri = api_url + "#{object_lists}?" + collect_parameters(options)
 
-      SearchResult.new get_json_response(uri)['data'], model_name
+      Search.new options, get_json_response(uri)['data'], SearchResult
     end
     
     def self.collect_parameters(options)

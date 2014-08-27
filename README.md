@@ -2,123 +2,90 @@
 
 Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
 
-## Installation
+=== Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'crunchbase', github: 'encoreshao/crunchbase'
+    gem 'crunchbase', github: 'encoreshao/crunchbase_v2'
 
 And then execute:
 
     $ bundle
 
-## Usage
+=== Usage Examples
 
-You will need a Crunchbase API key. You can get one by [signing up here](https://developer.crunchbase.com).
+Config your user_key, debug somewhere like development.rb.
 
-```ruby
-require 'crunchbase'
-Crunchbase::API.key = 'YOUR_API_KEY'
-```
+Crunchbase::API.key   = 'YOUR_API_KEY'
+Crunchbase::API.debug = false
 
-### Example
-```ruby
-# Print acquisitions done by Facebook
-company = Crunchbase::Organization.get 'facebook'
-company.acquisitions.each do |a|
-  acquisition = a.fetch
-  sum = acquisition.price.nil? ? 'Unknown amount' : "#{acquisition.price} #{acquisition.price_currency_code}"
-  puts "#{acquisition.announced_on.to_s}: #{acquisition.name} (#{sum})"
-end
+=== Search
 
-# 2014-07-02: Acquisition (500000000 USD)
-# 2014-06-03: Acquisition (Unknown amount)
-# 2014-04-24: Acquisition (Unknown amount)
-# 2014-03-25: Facebook acquired Oculus VR (2000000000 USD)
-# 2014-02-19: Facebook acquired WhatsApp (19000000000 USD)
-# 2014-01-13: Facebook acquired Branch (15000000 USD)
-# 2014-01-08: Facebook acquired Little Eye Labs (Unknown amount)
-# 2013-12-17: Facebook acquired SportStream (Unknown amount)
-```
+Searching the Crunchbase is possible with the Search class.
 
-### Notes
-Failed requests (such as the ones requesting non-existent entities) will throw `Crunchbase::CrunchbaseException`.
-##### Ordering
-`.list` methods take an `order` argument. Valid options are `Crunchbase::ORDER_CREATED_AT_DESC` (default), `Crunchbase::ORDER_CREATED_AT_ASC`, `Crunchbase::ORDER_UPDATED_AT_DESC` and `Crunchbase::ORDER_UPDATED_AT_ASC`.
-##### Relation objects
-`.list` methods return an array of `Relationship` objects, as do the relationship getters for most individual entities. These are summary objects returned by Crunchbase API, containing `type` and `name` of the target entity, along with timestamps. You can retrieve the "full" entity by calling `.fetch` method on the relation object.
+   s = Crunchbase::Search.search("facebook")
+   s.total_items
+   s.per_page
+   s.pages
+   s.current_page
+   s.results.each { |result| puts result.name }
+  
+The Search will return a list consisting of objects of the SearchResult type.
 
---
-
-### Organizations
-
-**Organization.get** – Retrieve an organization by permalink
-```ruby
-Crunchbase::Organization.get(permalink)
-```
-Properties: `name`, `permalink`, `description`, `short_description`, `homepage_url`, `founded_on`, `is_closed`, `closed_on`, `primary_role`, `total_funding_usd`, `number_of_investments`, `number_of_employees`, `stock_symbol`, `stock_exchange`, `created_at`, `updated_at`.
-
-Relationships: `competitors`, `funding_rounds`, `founders`, `products`, `acquisitions`, `ipo`.
+   all_results = s.results
 
 
-**Organization.list** – Retrieves a list of organizations
-```ruby
-Crunchbase::Organization.list(page, order)
-```
---
+=== Organizations && RelationShip List Items
 
-### People
+Get information by the permalink, Example:
 
-**Person.get** – Retrieve a person profile by permalink
-```ruby
-Crunchbase::Person.get(permalink)
-```
-Properties: `first_name`, `last_name`, `permalink`, `bio`, `born_on`, `died_on`, `is_deceased`, `location_uuid`, `created_at`, `updated_at`.
+    company = Crunchbase::Organization.get("facebook")
+    Relationship objects 
+    [ competitors customers founders funding_rounds ipos products sub_organizations ]
+    Friendly relationship objects
+    [ past_teams current_teams acquisitions offices headquarters categories investments primary_images images websites new_items board_members_and_advisors ]
+    company.competitors               Only return Top 8 items
+    company.competitors_total_items   Return competitors total items count
+    company.competitors.each do |e|
+      competitor = a.fetch
+      puts competitor.inspect
+    end
+    OR
+    company.websites
 
-Relationships: `founded_companies`.
+If you want all competitors items, Please do: 
 
+    all_competitors = Competitor.lists_for_permalink(company.permalink)
+    all_competitors.per_page
+    all_competitors.current_page
+    all_competitors.size
+    all_competitors.results           Return all competitors items
 
-**Person.list** – Retrieve a list of people
-```ruby
-Crunchbase::Person.list(page, order)
-```
---
+=== People
+    
+person = Crunchbase::Person.get( permalink )
 
-### Products
+#<Crunchbase::Person:0x007fc95bca3880 @type_name="Person" ..... > 
 
-**Product.get** – Retrieve product details by permalink
-```ruby
-Crunchbase::Product.get(permalink)
-```
-Properties: `name`, `permalink`, `lifecycle_stage`, `owner_id`, `launched_on`, `died_on`,  `created_at`, `updated_at`.
+people = Crunchbase::Person.list( page )
 
-**Product.list** – Retrieve a list of products
-```ruby
-Crunchbase::Product.list(page, order)
-```
---
+people.results.inspect
+[ 
+  #<Crunchbase::SearchResult:0x007fd16ae18b40 ...>, 
+  #<Crunchbase::SearchResult:0x007fd16ae18870 ...>, 
+  #<Crunchbase::SearchResult:0x007fd16ae185a0 ...>, 
+  #<Crunchbase::SearchResult:0x007fd16ae182f8 ...>
+  ......
+]
 
-### Funding rounds, Acquisitions and IPOs
-**FundingRound.get** – Retrieve information about funding round by uuid
-```ruby
-Crunchbase::FundingRound.get(uuid)
-```
-Properties: `name`, `permalink`, `funding_type`, `money_raised`, `money_raised_currency_code`,  `announced_on`, `canonical_currency_code`, `created_at`, `updated_at`.
+=== How to use Location & Category .... Very simple [ such as a Person ]
+    
+== Contributing
 
-Relationships: `funded_organization`.
+Contributions are welcome. Note that in order to run the test suite, you need to
+include an API key in +spec/apikey.yml+. This file is ignored by git. An example
+file is provided for convenience.
 
-**Acquisition.get** – Retrieve information about acquisition by uuid
-```ruby
-Crunchbase::Acquisition.get(uuid)
-```
-Properties: `name`, `permalink`, `acquisition_type`, `price`, `price_currency_code`,  `announced_on`, `disposition_of_acquired`, `created_at`, `updated_at`.
+== Copyright
 
-Relationships: `acquirer`, `acquiree`.
-
-**Ipo.get** – Retrieve information about IPO by uuid
-```ruby
-Crunchbase::Ipo.get(uuid)
-```
-Properties: `name`, `permalink`, `opening_share_price`, `opening_share_price_currency_code`, `stock_symbol`,  `stock_exchange_symbol`, `went_public_on`, `canonical_currency_code`, `money_raised`, `money_raised_currency_code`, `opening_valuation`, `opening_valueation_currency_code`, `created_at`, `updated_at`.
-
-Relationships: `funded_company`.
+Copyright © 2014-08 Encore Shao. See LICENSE for details.
