@@ -1,8 +1,8 @@
-# Crunchbase API
+= Crunchbase API
 
 Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
 
-=== Installation
+== Installation
 
 Add this line to your application's Gemfile:
 
@@ -12,7 +12,7 @@ And then execute:
 
     $ bundle
 
-=== Usage Examples
+== Usage Examples
 
 Config your user_key, debug somewhere like development.rb.
 
