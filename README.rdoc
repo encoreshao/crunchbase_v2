@@ -6,18 +6,21 @@ Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) ver
 
 Add this line to your application's Gemfile:
 
-    gem 'crunchbase', github: 'encoreshao/crunchbase_v2'
+    gem 'crunchbase_v2'
 
 And then execute:
 
     $ bundle
 
+Or install it yourself as:
+  
+    $ gem install crunchbase_v2
+
 == Usage Examples
 
 Config your user_key, debug somewhere like development.rb.
 
-  Crunchbase::API.key   = 'YOUR_API_KEY'
-  Crunchbase::API.debug = false
+  Crunchbase::API.key   = 'user_key'
 
 === Search
 

@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'crunchbase/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "crunchbase"
+  spec.name          = "crunchbase_v2"
   spec.version       = Crunchbase::VERSION
   spec.authors       = ["Encore Shao"]
   spec.email         = ["encore@ekohe.com"]
-  spec.summary       = %q{ Wrapper for Crunchbase API v2 }
-  spec.description   = %q{ Wrapper for Crunchbase API v2 }
+  spec.summary       = %q{ Wrapper for Crunchbase API version 2 }
+  spec.description   = %q{ Wrapper for Crunchbase API version 2 }
   spec.homepage      = "https://github.com/encoreshao/crunchbase_v2"
   spec.license       = "MIT"
 
