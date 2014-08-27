@@ -1,21 +1,6 @@
 # encoding: utf-8
 
-# "websites": {
-# "paging": {
-#  "total_items": 6,
-#  "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/websites",
-#  "sort_order": "created_at DESC"
-# },
-# "items": [
-#  {
-#   "url": "http://www.facebook.com/facebook",
-#   "type": "WebPresence",
-#   "title": "facebook",
-#   "created_at": 1406445972,
-#   "updated_at": 1406445972
-#  }
-# ]
-# }
+# http://api.crunchbase.com/v/2/organization/facebook/websites
 
 module Crunchbase
   class Website < CBEntity

@@ -8,7 +8,7 @@ module Crunchbase
       end
 
       it "should pull from web api" do
-        @all_offices.items_per_page.should == 1000
+        @all_offices.per_page.should == 1000
         @all_offices.current_page.should == 1
         @all_offices.items.count.should == 3
 

@@ -12,7 +12,7 @@ module Crunchbase
         puts @all_news.items.first.title
         puts @all_news.next_page_url
         
-        @all_news.items_per_page.should == 1000
+        @all_news.per_page.should == 1000
         @all_news.current_page.should == 1
       end
 
@@ -26,7 +26,7 @@ module Crunchbase
       second_news = NewItem.lists_for_permalink("facebook", {page: page})
       
       second_news.next_page_url.should  == nil
-      second_news.items_per_page.should == 1000
+      second_news.per_page.should == 1000
       second_news.current_page.should   == page
     end
   end

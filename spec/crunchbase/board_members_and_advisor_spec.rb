@@ -8,7 +8,7 @@ module Crunchbase
       end
 
       it "should pull from web api" do
-        @all_board_members_and_advisors.items_per_page.should == 1000
+        @all_board_members_and_advisors.per_page.should == 1000
         @all_board_members_and_advisors.current_page.should == 1
       end
     end

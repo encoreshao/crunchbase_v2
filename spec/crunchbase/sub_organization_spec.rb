@@ -9,9 +9,9 @@ module Crunchbase
       end
 
       it "should pull from web api" do
-        @all_sub_organizations.items_per_page.should == 1000
+        @all_sub_organizations.per_page.should == 1000
         @all_sub_organizations.current_page.should == 1
-        @all_sub_organizations.total_items.should == 2
+        @all_sub_organizations.size.should == 2
 
         puts @all_sub_organizations.items.inspect
       end

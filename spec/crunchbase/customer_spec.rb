@@ -9,9 +9,9 @@ module Crunchbase
       end
 
       it "should pull from web api" do
-        @all_customers.items_per_page.should == 1000
+        @all_customers.per_page.should == 1000
         @all_customers.current_page.should == 1
-        @all_customers.total_items.should == 1
+        @all_customers.size.should == 1
         @all_customers.items.count.should == 1
       end
     end

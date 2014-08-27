@@ -1,23 +1,5 @@
 # encoding: utf-8
 
-# Top 8 category
-# "competitors": {
-# "paging": {
-#  "total_items": 9,
-#  "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/categories",
-#  "sort_order": "created_at DESC"
-# },
-# "items": [
-#  {
-#   "type": "Organization",
-#   "name": "Tackk",
-#   "path": "organization/tackk",
-#   "created_at": 1345421224,
-#   "updated_at": 1397987416
-#  }
-# ]
-# }
-
 # http://api.crunchbase.com/v/2/organization/facebook/categories?user_key=key
 module Crunchbase
   class Category < CBEntity

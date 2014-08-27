@@ -9,9 +9,9 @@ module Crunchbase
       end
 
       it "check the return results is correct" do
-        @all_funding_rounds.items_per_page.should == 1000
+        @all_funding_rounds.per_page.should == 1000
         @all_funding_rounds.current_page.should == 1
-        @all_funding_rounds.total_items.should == 11
+        @all_funding_rounds.size.should == 11
         @all_funding_rounds.items.count.should == 11
       end
     end

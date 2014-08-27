@@ -8,7 +8,8 @@ module Crunchbase
     RESOURCE_NAME = 'funding-round'
     RESOURCE_LIST = 'funding_rounds'
 
-    attr_reader :type_name, :post_money_valuation_currency_code, :permalink, :funding_type, :money_raised_usd, :announced_on_trust_code, :money_raised, 
+    attr_reader :type_name, :name, :post_money_valuation_currency_code, :permalink, :funding_type, 
+                :money_raised_usd, :announced_on_trust_code, :money_raised, 
                 :money_raised_currency_code, :announced_on, :canonical_currency_code,
                 :created_at, :updated_at
 

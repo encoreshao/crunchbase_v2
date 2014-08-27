@@ -9,7 +9,7 @@ module Crunchbase
       end
 
       it "should pull from web api" do
-        @all_primary_image.items_per_page.should == 1000
+        @all_primary_image.per_page.should == 1000
         @all_primary_image.current_page.should == 1
       end
 

@@ -33,20 +33,23 @@ module Crunchbase
     RESOURCE_NAME = 'person'
     RESOURCE_LIST = 'people'
     
-    attr_reader :type_name, :first_name, :last_name, :permalink, :bio, :born_on, :died_on, 
+    attr_reader :type_name, :name, :first_name, :last_name, :permalink, :bio, :born_on, :died_on, 
                 :is_deceased, :created_at, :updated_at
 
     def initialize(json)
       @type_name      = json['type']
-      @first_name     = json['first_name']
-      @last_name      = json['last_name']
-      @permalink      = (json['permalink'] || json['path'].gsub('person/', ''))
-      @bio            = json['bio']
-      @born_on        = json['born_on'] && DateTime.parse(json['born_on'])
-      @died_on        = json['died_on'] && DateTime.parse(json['died_on'])
-      @is_deceased    = json['is_deceased']
-      @created_at     = Time.at(json['created_at']).utc
-      @updated_at     = Time.at(json['updated_at']).utc
+      properties      = json['properties']
+
+      @name           = properties['first_name'] + ' ' + properties['last_name']
+      @first_name     = properties['first_name']
+      @last_name      = properties['last_name']
+      @permalink      = properties['permalink']
+      @bio            = properties['bio']
+      @born_on        = properties['born_on'] && DateTime.parse(properties['born_on'])
+      @died_on        = properties['died_on'] && DateTime.parse(properties['died_on'])
+      @is_deceased    = properties['is_deceased']
+      @created_at     = Time.at(properties['created_at']).utc
+      @updated_at     = Time.at(properties['updated_at']).utc
     end
 
   end

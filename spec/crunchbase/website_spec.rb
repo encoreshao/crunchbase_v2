@@ -12,7 +12,7 @@ module Crunchbase
         puts @all_websites.items.first.title
         puts @all_websites.next_page_url
         
-        @all_websites.items_per_page.should == 1000
+        @all_websites.per_page.should == 1000
         @all_websites.current_page.should == 1
         @all_websites.items.count.should == 6
       end

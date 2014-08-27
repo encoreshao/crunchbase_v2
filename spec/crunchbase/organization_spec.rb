@@ -8,6 +8,21 @@ module Crunchbase
         @company = Organization.get("facebook")
       end
 
+      it "should loading relationship data" do
+        puts @company.websites_total_items
+        puts @company.websites.inspect
+        teams = Website.lists_for_permalink(@company.permalink)
+      end
+
+      it "should organization's websites data" do
+        # Top 8 websites
+        puts @company.websites
+        # Show websites total count
+        puts @company.websites_total_items
+        # Show organization's websites list search by organization permalink
+        teams = Website.lists_for_permalink(@company.permalink)
+      end
+
       it "should pull from web api" do
         @company.name.should == "Facebook"
         @company.competitors_total_items.should == 9
@@ -32,25 +47,15 @@ module Crunchbase
         @company.board_members_and_advisors_total_items.should == 12
       end
       
-      it "show somethings" do
-        # show Top 8 Websites
-        @company.websites_total_items.should == 6
-        puts @company.websites.inspect
-        # show Top 8 news
-        @company.new_items_total_items.should == 3116
-        puts @company.new_items.inspect
-        # show organization logo url
-        puts @company.logo_url
-      end
 
     end
 
     it "Search organizations by name" do
       results = Organization.search({ domain_name: "facebook.com", organization_types: 'company' })
 
-      results.items_per_page.should == 1000
+      results.per_page.should == 1000
       results.current_page.should == 1
-      results.items[0].name.should == 'Facebook'
+      puts results.results[0].inspect
     end
     
   end

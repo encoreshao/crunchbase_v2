@@ -1,41 +1,6 @@
 # encoding: utf-8
 
-# Search by product permalink
-# "data": {
-# "properties": {
-#  "lifecycle_stage": "live",
-#  "owner_id": "df6628127f970b439d3e12f64f504fbb",
-#  "short_description": "Everyone of us. Everywhere. Connected.",
-#  "permalink": "internet-org",
-#  "name": "Internet.org",
-#  "homepage_url": "http://internet.org",
-#  "description": "Internet.org is a global partnership between technology leaders",
-#  "launched_on_day": 1,
-#  "launched_on_month": 8,
-#  "launched_on_year": 2013,
-#  "launched_on": "2013-08-01",
-#  "launched_on_trust_code": 6,
-#  "created_at": 1406929558,
-#  "updated_at": 1406929776
-# }
-
-# Here: search by organization permalink, return top 8 products
-# "products": {
-#  "paging": {
-#   "total_items": 17,
-#   "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/products",
-#   "sort_order": "created_at DESC"
-#  },
-#  "items": [
-#   {
-#    "type": "Product",
-#    "name": "Internet.org",
-#    "path": "product/internet-org",
-#    "created_at": 1406929558,
-#    "updated_at": 1406929776
-#   }
-#  ]
-# }
+# http://api.crunchbase.com/v/2/organization/facebook/products
 
 require 'date'
 

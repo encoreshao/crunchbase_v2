@@ -74,7 +74,18 @@ module Crunchbase
       
       uri = api_url + "#{object_lists}?" + collect_parameters(options)
 
-      SearchResult.new get_json_response(uri)['data'], Relationship
+      get_json_response(uri)['data']
+    end
+    
+    
+    # Fetches URI for the search interface.
+    def self.list(options, object_lists)
+      options[:page]  = 1 if options[:page].nil?
+      model_name      = options.delete(:model_name)
+      
+      uri = api_url + "#{object_lists}?" + collect_parameters(options)
+
+      SearchResult.new get_json_response(uri)['data'], model_name
     end
     
     def self.collect_parameters(options)
@@ -88,12 +99,11 @@ module Crunchbase
     def self.lists_for_permalink(permalink, category, options)
       options[:page]  = 1 if options[:page].nil?
       options[:order] = ORDER_CREATED_AT_ASC if options[:order].nil?
-      
       model_name      = options.delete(:model_name)
 
       uri = api_url + "organization/#{permalink}/#{category}?#{collect_parameters(options)}"
 
-      SearchResult.new get_json_response(uri)['data'], model_name
+      Search.new options, get_json_response(uri)['data'], model_name
     end
     
     # Gets specified URI, then parses the returned JSON. Raises Timeout error 
