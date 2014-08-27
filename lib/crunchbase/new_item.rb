@@ -1,23 +1,6 @@
 # encoding: utf-8
 
-# "news": {
-#  "paging": {
-#   "total_items": 3113,
-#   "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/news",
-#   "sort_order": "created_at DESC"
-#  },
-#  "items": [
-#   {
-#    "url": "http://techcrunch.com/2014/08/14/why-ferguson-wasnt-trending-for-some-social-media-users-lastnight/",
-#    "author": null,
-#    "posted_on": "2014-08-14",
-#    "type": "PressReference",
-#    "title": "Why #Ferguson Wasn’t Trending For Some Social Media Users Last Night | TechCrunch",
-#    "created_at": 1408085709,
-#    "updated_at": 1408085710
-#   }
-#  ]
-# }
+# http://api.crunchbase.com/v/2/organization/facebook/news
 
 module Crunchbase
   class NewItem < CBEntity

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/person/randi-zuckerberg?user_key=key"
+# http://api.crunchbase.com/v/2/person/randi-zuckerberg?user_key=key
 
 module Crunchbase
   class Person < CBEntity

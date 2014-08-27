@@ -1,28 +1,6 @@
 # encoding: utf-8
 
 # http://api.crunchbase.com/v/2/organization/facebook/customers
-# {
-#   data: {
-#     paging: {
-#       total_items: 1,
-#       items_per_page: 1000,
-#       number_of_pages: 1,
-#       current_page: 1,
-#       next_page_url: null,
-#       prev_page_url: null,
-#       sort_order: "created_at desc"
-#     },
-#     items: [
-#       {
-#         type: "Organization",
-#         name: "Ouyeaa",
-#         path: "organization/ouyeaa",
-#         created_at: 1408010328,
-#         updated_at: 1408886609
-#       }
-#     ]
-#   }
-# }
 
 module Crunchbase
   class Customer < CBEntity

@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 # http://api.crunchbase.com/v/2/organization/facebook/offices
+
 module Crunchbase
   class Office < CBEntity
     RESOURCE_LIST = 'offices'

@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 # http://api.crunchbase.com/v/2/organization/facebook/founders?user_key=key
+
 module Crunchbase
   class Founder < CBEntity
     RESOURCE_LIST = 'founders'

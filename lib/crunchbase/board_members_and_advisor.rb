@@ -1,22 +1,6 @@
 # encode: utf-8
 
-# "board_members_and_advisors": {
-#   "paging": {
-#    "total_items": 12,
-#    "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors",
-#    "sort_order": "created_at DESC"
-#   },
-#   "items": [
-#    {
-#     "first_name": "Marc",
-#     "last_name": "Andreessen",
-#     "title": "Member of the Board of Directors",
-#     "started_on": null,
-#     "path": "person/marc-andreessen",
-#     "created_at": 1194976730,
-#     "updated_at": 1405353255
-#    }
-# }
+# http://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors
 
 module Crunchbase
   class BoardMembersAndAdvisor < CBEntity

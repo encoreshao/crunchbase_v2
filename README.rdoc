@@ -21,19 +21,14 @@ Config your user_key, debug somewhere like development.rb.
 
 === Search
 
-Searching the Crunchbase is possible with the Search class.
+Searching the Crunchbase is possible with the Search class, The Search will return a list consisting of objects of the SearchResult type.
 
    s = Crunchbase::Search.search("facebook")
-   s.total_items
-   s.per_page
-   s.pages
-   s.current_page
-   s.results.each { |result| puts result.name }
-  
-The Search will return a list consisting of objects of the SearchResult type.
-
+   OR
+   s = Crunchbase::Search.search({ domain_name: 'facebook.com' }, 'organizations')
+   s.total_items || s.per_page || s.pages || s.current_page
    all_results = s.results
-
+   all_results.each { |r| puts r.name }
 
 === Organizations && RelationShip List Items
 

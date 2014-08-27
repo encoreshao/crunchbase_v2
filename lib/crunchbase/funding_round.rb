@@ -2,7 +2,6 @@
 
 # http://api.crunchbase.com/v/2/organization/facebook/funding_rounds
 
-
 module Crunchbase
   class FundingRound < CBEntity
     RESOURCE_NAME = 'funding-round'

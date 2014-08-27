@@ -1,25 +1,7 @@
 # encoding: utf-8
 
-# From organization Top 8 past_teams
-# "past_team": {
-#   "paging": {
-#    "total_items": 186,
-#    "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/current_team",
-#    "sort_order": "created_at DESC"
-#   },
-#   "items": [
-#    {
-#     "first_name": "Randi",
-#     "last_name": "Zuckerberg",
-#     "title": "Director of Market Development and Spokeswoman",
-#     "started_on": null,
-#     "ended_on": null,
-#     "path": "person/randi-zuckerberg",
-#     "created_at": 1233300345,
-#     "updated_at": 1408498780
-#    }
-#   ]
-#  }
+# http://api.crunchbase.com/v/2/organization/facebook/current_team
+
 module Crunchbase
   class CurrentTeam < CBEntity
     RESOURCE_LIST = 'current_team'

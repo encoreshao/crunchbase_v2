@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organizations?domain_name=facebook.com&organization_types=company&user_key=key&page=1
-
 module Crunchbase
   class Search
     include Enumerable
@@ -19,7 +17,7 @@ module Crunchbase
     end
 
     def self.search(query, t='organizations')
-      query = { name: query } unless query.kind_of?(Hash)
+      query = { name: query } if query.kind_of?(String)
 
       Search.new query, API.search(query, t), SearchResult
     end

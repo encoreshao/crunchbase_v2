@@ -1,30 +1,5 @@
 # encoding: utf-8
 
-# "data": {
-# "properties": {
-#  "went_public_on": "2012-05-16",
-#  "went_public_on_trust_code": 7,
-#  "canonical_currency_code": "USD",
-#  "money_raised_currency_code": "USD",
-#  "opening_valuation_currency_code": "USD",
-#  "stock_symbol": "FB",
-#  "permalink": "a3bc391490d52ba8529d1cfc20550a87",
-#  "name": "Went public on May 16, 2012",
-#  "opening_valuation_usd": 104000000000,
-#  "opening_share_price_usd": "38.0",
-#  "stock_exchange_symbol": "NASDAQ",
-#  "shares_outstanding": null,
-#  "shares_sold": 421000000,
-#  "opening_share_price_currency_code": "USD",
-#  "opening_share_price": "38.0",
-#  "money_raised_usd": 16000000000,
-#  "opening_valuation": 104000000000,
-#  "money_raised": 16000000000,
-#  "created_at": 1407165772,
-#  "updated_at": 1407183294
-# }
-
-
 module Crunchbase
   class Ipo < CBEntity
     RESOURCE_NAME = 'ipo'
