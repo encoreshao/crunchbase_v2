@@ -65,7 +65,7 @@ module Crunchbase
     def self.fetch(permalink, object_name)
       uri = api_url + "#{object_name}/#{permalink}"
 
-      get_json_response(uri)['data']
+      get_json_response(uri)
     end
     
     # Fetches URI for the search interface.
@@ -75,7 +75,7 @@ module Crunchbase
       
       uri = api_url + "#{object_lists}?" + collect_parameters(options)
 
-      get_json_response(uri)['data']
+      get_json_response(uri)
     end
     
     
@@ -86,7 +86,7 @@ module Crunchbase
       
       uri = api_url + "#{object_lists}?" + collect_parameters(options)
 
-      Search.new options, get_json_response(uri)['data'], SearchResult
+      Search.new options, get_json_response(uri), SearchResult
     end
     
     def self.collect_parameters(options)
@@ -104,7 +104,7 @@ module Crunchbase
 
       uri = api_url + "organization/#{permalink}/#{category}?#{collect_parameters(options)}"
 
-      Search.new options, get_json_response(uri)['data'], model_name
+      Search.new options, get_json_response(uri), model_name
     end
     
     # Gets specified URI, then parses the returned JSON. Raises Timeout error 
@@ -117,7 +117,8 @@ module Crunchbase
       resp = Timeout::timeout(@timeout_limit) {
         get_url_following_redirects(uri, @redirect_limit)
       }
-      response = parser.parse(resp)
+      response = parser.parse(resp)["data"]
+
       raise CrunchException, response["error"] if response.class == Hash && response["error"]
 
       response
