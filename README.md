@@ -1,14 +1,14 @@
 = Crunchbase API
 
-Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
+    Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
 
 == Installation
 
-Add this line to your application's Gemfile:
+    Add this line to your application's Gemfile:
 
     gem 'crunchbase', github: 'encoreshao/crunchbase_v2'
 
-And then execute:
+    And then execute:
 
     $ bundle
 
