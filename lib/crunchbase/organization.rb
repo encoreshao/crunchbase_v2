@@ -11,7 +11,9 @@ module Crunchbase
                 :homepage_url, :founded_on, :is_closed, :closed_on, 
                 :primary_role, :total_funding_usd, :number_of_investments, 
                 :number_of_employees, :stock_symbol, :stock_exchange, 
-                :created_at, :updated_at, :logo_url
+                :created_at, :updated_at, :logo_url, :closed_on_day, :closed_on_month, 
+                :closed_on_year, :founded_on_day, :founded_on_month, :founded_on_year
+
 
     attr_reader :past_teams, :sub_organizations, :current_teams, :acquisitions, :competitors, 
                 :offices, :headquarters, :funding_rounds, :categories, :customers, :investments, 
@@ -37,8 +39,14 @@ module Crunchbase
       @description            = properties['description']
       @short_description      = properties['short_description']
       @homepage_url           = properties['homepage_url']
+      @closed_on_day          = properties['founded_on_day']
+      @closed_on_month        = properties['founded_on_month']
+      @closed_on_year         = properties['founded_on_year']
       @founded_on             = properties['founded_on'] && DateTime.parse(properties['founded_on'])
       @is_closed              = properties['is_closed']
+      @closed_on_day          = properties['closed_on_day']
+      @closed_on_month        = properties['closed_on_month']
+      @closed_on_year         = properties['closed_on_year']
       @closed_on              = properties['closed_on'] && DateTime.parse(properties['closed_on'])
       @primary_role           = properties['primary_role']
       @total_funding_usd      = properties['total_funding_usd']
