@@ -12,7 +12,6 @@ module Crunchbase
 
     # Finds an entity by its name. Uses two HTTP requests; one to find the
     # permalink, and another to request the actual entity.
-    # http://api.crunchbase.com/v/2/organizations?name=ekohe&organization_types=company&user_key=key&page=1"
     def self.search(options)
       return [] unless self == Crunchbase::Organization
 
