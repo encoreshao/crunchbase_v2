@@ -15,7 +15,7 @@ module Crunchbase
       @path                 = json['path']
       @parent_location_uuid = json['parent_location_uuid']
       @uuid                 = json['uuid']
-      @type_name            = json['type_name']
+      @type_name            = json['type']
       @created_at           = Time.at(json['created_at']).utc
       @updated_at           = Time.at(json['updated_at']).utc
     end

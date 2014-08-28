@@ -8,8 +8,8 @@ module Crunchbase
   class PastTeam < CBEntity
     RESOURCE_LIST = 'past_team'
 
-    attr_reader :type_name, :name, :first_name, :last_name, :path, :permalink, :title, :started_on, 
-                :ended_on, :created_at, :updated_at
+    attr_reader :type_name, :name, :first_name, :last_name, :path, :permalink, :title, 
+                :started_on, :ended_on, :created_at, :updated_at
 
     def initialize(json)
       @type_name      = json['type']

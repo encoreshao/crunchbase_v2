@@ -14,7 +14,7 @@ module Crunchbase
       @type_name      = json['type']
       properties      = json['properties']
 
-      @name           = properties['first_name'] + ' ' + properties['last_name']
+      @name           = properties['first_name'].to_s + ' ' + properties['last_name'].to_s
       @first_name     = properties['first_name']
       @last_name      = properties['last_name']
       @permalink      = properties['permalink']

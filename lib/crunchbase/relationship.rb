@@ -11,7 +11,7 @@ module Crunchbase
       @announced_on = hash["announced_on"] && DateTime.parse(hash["announced_on"])
       @name         = hash["name"]
       @path         = hash["path"]
-      @permalink    = hash["path"].split('/').last
+      @permalink    = hash["path"] && hash["path"].split('/').last
       @created_at   = hash['created_at'] && Time.at(hash['created_at']).utc
       @updated_at   = hash['updated_at'] && Time.at(hash['updated_at']).utc
     end

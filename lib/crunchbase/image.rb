@@ -13,7 +13,7 @@ module Crunchbase
       @type_name      = json['type']
       @title          = json['title']
       @original_path  = json['path']
-      @path           = Crunchbase::API.image_url + json['path']
+      @path           = json['path'] && Crunchbase::API.image_url + json['path']
       @created_at     = Time.at(json['created_at']).utc
       @updated_at     = Time.at(json['updated_at']).utc
     end

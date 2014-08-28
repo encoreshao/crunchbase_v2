@@ -6,7 +6,7 @@ module Crunchbase
     RESOURCE_NAME = 'category'
     RESOURCE_LIST = 'categories'
 
-    attr_reader :type_name, :name, :uuid, :path, :created_at, :updated_at
+    attr_reader :type_name, :name, :uuid, :path, :created_at, :updated_at, :number_of_organizations
 
     def initialize(json)
       @type_name    = json['type']
@@ -15,6 +15,7 @@ module Crunchbase
       @path         = json['path']
       @created_at   = Time.at(json['created_at']).utc
       @updated_at   = Time.at(json['updated_at']).utc
+      @number_of_organizations = json['number_of_organizations']
     end
 
   end
