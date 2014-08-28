@@ -17,10 +17,10 @@ module Crunchbase
 
 
     def initialize(json)
+      @type_name            = json['type']
       properties            = json['properties']
       relationships         = json['relationships']
 
-      @type_name            = properties['type']
       @name                 = properties['name']
       @went_public_on       = properties['went_public_on']
       @stock_symbol         = properties['stock_symbol']

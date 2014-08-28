@@ -40,7 +40,7 @@ Searching the Crunchbase is possible with the Search class, The Search will retu
 Get information by the permalink, Example:
 
     company = Crunchbase::Organization.get("facebook")
-    Relationship objects [ competitors customers founders funding_rounds ipos products sub_organizations ]
+    Relationship objects [ competitors customers founders funding_rounds ipos products sub_organizations, acquisitions ]
     company.competitors               Only return Top 8 items
     company.competitors_total_items   Return competitors total items count
     company.competitors.each do |e|
@@ -48,7 +48,7 @@ Get information by the permalink, Example:
       puts competitor.name
     end
     OR
-    Friendly relationship objects [ past_teams current_teams acquisitions offices headquarters categories investments primary_images images websites new_items board_members_and_advisors ]
+    Friendly relationship objects [ past_teams current_teams offices headquarters categories investments primary_images images websites new_items board_members_and_advisors ]
     company.websites
 
 If you want all competitors items, Please do: 

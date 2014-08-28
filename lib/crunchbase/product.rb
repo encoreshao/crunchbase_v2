@@ -18,10 +18,10 @@ module Crunchbase
                 :new_items_total_items
 
     def initialize(json)
+      @type_name          = json['type']
       properties          = json['properties']
       relationships       = json['relationships']
       
-      @type_name          = properties['type']
       @name               = properties['name']
       @lifecycle_stage    = properties['lifecycle_stage']
       @owner_id           = properties['owner_id']

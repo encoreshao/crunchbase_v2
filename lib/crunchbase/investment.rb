@@ -21,6 +21,11 @@ module Crunchbase
         @invested_in_type   = json['invested_in_type'] && json['invested_in_type']['type']
         @invested_in_name   = json['invested_in_type'] && json['invested_in_type']['name']
         @invested_in_path   = json['invested_in_type'] && json['invested_in_type']['path']
+      elsif json['invested_in']
+        # From one's organization investments
+        @invested_in_type   = json['invested_in'] && json['invested_in']['type']
+        @invested_in_name   = json['invested_in'] && json['invested_in']['name']
+        @invested_in_path   = json['invested_in'] && json['invested_in']['path']
       elsif json['investor']
         @invested_in_type   = json['investor'] && json['investor']['type']
         @invested_in_name   = json['investor'] && json['investor']['name']

@@ -39,12 +39,16 @@ module Crunchbase
     end
 
     def self.array_from_list(list)
+      return [] if list.nil?
+
       list['items'].map do |l|
         self.new l
       end
     end
 
     def self.total_items_from_list(list)
+      return 0 if list.nil?
+      
       list['paging']['total_items']
     end
 
