@@ -8,11 +8,12 @@ module Crunchbase
     RESOURCE_LIST = 'organizations'
 
     attr_reader :type_name, :name, :permalink, :description, :short_description, 
-                :homepage_url, :founded_on, :is_closed, :closed_on, 
-                :primary_role, :total_funding_usd, :number_of_investments, 
-                :number_of_employees, :stock_symbol, :stock_exchange, 
+                :homepage_url, :founded_on, :is_closed, :closed_on, :email_address, 
+                :primary_role, :total_funding_usd, :number_of_investments, :role_company, 
+                :number_of_employees, :stock_symbol, :stock_exchange, :uuid, :closed_on_trust_code, 
                 :created_at, :updated_at, :logo_url, :closed_on_day, :closed_on_month, 
-                :closed_on_year, :founded_on_day, :founded_on_month, :founded_on_year
+                :closed_on_year, :founded_on_day, :founded_on_month, :founded_on_year, 
+                :role_investor, :founded_on_trust_code
 
 
     attr_reader :past_teams, :sub_organizations, :current_teams, :acquisitions, :competitors, 
@@ -30,10 +31,12 @@ module Crunchbase
 
 
     def initialize(json)
+      @uuid                   = json['uuid']
       @type_name              = json['type']
       properties              = json['properties']
       relationships           = json['relationships']
 
+      @role_company           = properties['role_company']
       @name                   = properties['name']
       @permalink              = properties['permalink']
       @description            = properties['description']
@@ -43,11 +46,15 @@ module Crunchbase
       @closed_on_month        = properties['founded_on_month']
       @closed_on_year         = properties['founded_on_year']
       @founded_on             = properties['founded_on'] && DateTime.parse(properties['founded_on'])
+      @founded_on_trust_code  = properties['founded_on_trust_code']
       @is_closed              = properties['is_closed']
+      @closed_on_trust_code   = properties['closed_on_trust_code']
+      @email_address          = properties['email_address']
       @closed_on_day          = properties['closed_on_day']
       @closed_on_month        = properties['closed_on_month']
       @closed_on_year         = properties['closed_on_year']
       @closed_on              = properties['closed_on'] && DateTime.parse(properties['closed_on'])
+      @role_investor          = properties['role_investor']
       @primary_role           = properties['primary_role']
       @total_funding_usd      = properties['total_funding_usd']
       @number_of_investments  = properties['number_of_investments']
