@@ -20,7 +20,8 @@ Or install it yourself as:
 
 Config your user_key, debug somewhere like development.rb, Recommended directory config/initializers/crunchbase.rb
 
-  require 'crunchbase_v2'
+  require 'crunchbase'
+
   Crunchbase::API.key   = 'user_key'
   Crunchbase::API.debug = false
 
@@ -28,36 +29,36 @@ Config your user_key, debug somewhere like development.rb, Recommended directory
 
 Searching the Crunchbase is possible with the Search class, The Search will return a list consisting of objects of the SearchResult type.
 
-   s = Crunchbase::Search.search("facebook")
+   response = Crunchbase::Search.search("facebook")
    OR
-   s = Crunchbase::Search.search({ domain_name: 'facebook.com' }, 'organizations')
-   s.total_items || s.per_page || s.pages || s.current_page
-   all_results = s.results
+   response = Crunchbase::Search.search({ domain_name: 'facebook.com' }, 'organizations')
+   response.total_items || response.per_page || response.pages || response.current_page
+   all_results = response.results
    all_results.each { |r| puts r.name }
 
 === Organizations && RelationShip List Items
 
 Get information by the permalink, Example:
 
-    company = Crunchbase::Organization.get("facebook")
+    response = Crunchbase::Organization.get("facebook")
     Relationship objects [ competitors customers founders funding_rounds ipos products sub_organizations, acquisitions ]
-    company.competitors               Only return Top 8 items
-    company.competitors_total_items   Return competitors total items count
-    company.competitors.each do |e|
-      competitor = a.fetch
+    response.competitors               Only return Top 8 items
+    response.competitors_total_items   Return competitors total items count
+    response.competitors.each do |e|
+      competitor = (a.fetch || 
       puts competitor.name
     end
     OR
     Friendly relationship objects [ past_teams current_teams offices headquarters categories investments primary_images images websites new_items board_members_and_advisors ]
-    company.websites
+    response.websites
 
 If you want all competitors items, Please do: 
 
-    all_competitors = Competitor.lists_for_permalink(company.permalink)
-    all_competitors.per_page
-    all_competitors.current_page
-    all_competitors.size
-    all_competitors.results           Return all competitors items
+    response = Crunchbase::Competitor.lists_for_permalink(response.permalink)
+    response.per_page
+    response.current_page
+    response.size
+    response.results           Return all competitors items
 
 === People
     
