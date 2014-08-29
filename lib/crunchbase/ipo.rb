@@ -2,6 +2,7 @@
 
 module Crunchbase
   class Ipo < CBEntity
+    
     RESOURCE_NAME = 'ipo'
     RESOURCE_LIST = 'ipo'
 

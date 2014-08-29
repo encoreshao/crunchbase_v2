@@ -14,7 +14,7 @@ module Crunchbase
                 :number_of_employees, :stock_symbol, :stock_exchange, :uuid, :closed_on_trust_code, 
                 :created_at, :updated_at, :logo_url, :closed_on_day, :closed_on_month, 
                 :closed_on_year, :founded_on_day, :founded_on_month, :founded_on_year, 
-                :role_investor, :founded_on_trust_code
+                :role_investor, :founded_on_trust_code, :phone_number
 
     attr_reader :past_teams, :sub_organizations, :current_teams, :acquisitions, :competitors, 
                 :offices, :headquarters, :funding_rounds, :categories, :customers, :investments, 
@@ -42,18 +42,19 @@ module Crunchbase
       @description            = properties['description']
       @short_description      = properties['short_description']
       @homepage_url           = properties['homepage_url']
-      @closed_on_day          = properties['founded_on_day']
-      @closed_on_month        = properties['founded_on_month']
-      @closed_on_year         = properties['founded_on_year']
+      @email_address          = properties['email_address']
+      @phone_number           = properties['phone_number']
+      @founded_on_day         = properties['founded_on_day']
+      @founded_on_month       = properties['founded_on_month']
+      @founded_on_year        = properties['founded_on_year']
       @founded_on             = properties['founded_on'] && DateTime.parse(properties['founded_on'])
       @founded_on_trust_code  = properties['founded_on_trust_code']
       @is_closed              = properties['is_closed']
-      @closed_on_trust_code   = properties['closed_on_trust_code']
-      @email_address          = properties['email_address']
       @closed_on_day          = properties['closed_on_day']
       @closed_on_month        = properties['closed_on_month']
       @closed_on_year         = properties['closed_on_year']
       @closed_on              = properties['closed_on'] && DateTime.parse(properties['closed_on'])
+      @closed_on_trust_code   = properties['closed_on_trust_code']
       @role_investor          = properties['role_investor']
       @primary_role           = properties['primary_role']
       @total_funding_usd      = properties['total_funding_usd']
@@ -257,5 +258,4 @@ module Crunchbase
     end
 
   end
-
 end

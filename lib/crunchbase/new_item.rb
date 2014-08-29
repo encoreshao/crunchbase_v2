@@ -4,6 +4,7 @@
 
 module Crunchbase
   class NewItem < CBEntity
+
     RESOURCE_LIST = 'news'
 
     attr_reader :type_name, :url, :author, :posted_on, :type, :title, :created_at, 
@@ -18,5 +19,6 @@ module Crunchbase
       @created_at     = json['created_at']
       @updated_at     = json['updated_at']
     end
+    
   end
 end

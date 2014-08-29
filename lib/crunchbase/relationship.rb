@@ -4,6 +4,7 @@ require 'date'
 
 module Crunchbase
   class Relationship < CBEntity
+    
     attr_reader :name, :type_name, :path, :permalink, :created_at, :updated_at, :announced_on
 
     def initialize(hash)

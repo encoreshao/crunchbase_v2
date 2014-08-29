@@ -4,6 +4,7 @@
 
 module Crunchbase
   class PrimaryImage < CBEntity
+    
     RESOURCE_LIST = 'primary_image'
 
     attr_reader :type_name, :title, :path, :original_path, :created_at, :updated_at

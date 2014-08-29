@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Investment < CBEntity
+    
     RESOURCE_LIST = 'investments'
 
     attr_reader :type_name, :money_invested, :money_invested_currency_code, 
@@ -31,7 +32,6 @@ module Crunchbase
         @invested_in_name   = json['investor'] && json['investor']['name']
         @invested_in_path   = json['investor'] && json['investor']['path']
       end
-      
     end
 
   end

@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Customer < CBEntity
+    
     RESOURCE_LIST = 'customers'
     
     attr_reader :type_name, :name, :permalink, :path, :created_at, :updated_at
@@ -18,5 +19,4 @@ module Crunchbase
     end
 
   end
-
 end

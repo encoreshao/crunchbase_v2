@@ -6,6 +6,7 @@ require 'date'
 
 module Crunchbase
   class Product < CBEntity
+    
     RESOURCE_NAME = 'product'
     RESOURCE_LIST = 'products'
 
@@ -74,5 +75,4 @@ module Crunchbase
     end
 
   end
-
 end

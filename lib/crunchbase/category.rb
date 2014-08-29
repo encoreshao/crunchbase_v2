@@ -1,8 +1,10 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organization/facebook/categories?user_key=key
+# http://api.crunchbase.com/v/2/organization/facebook/categories
+
 module Crunchbase
   class Category < CBEntity
+    
     RESOURCE_NAME = 'category'
     RESOURCE_LIST = 'categories'
 
@@ -19,5 +21,4 @@ module Crunchbase
     end
 
   end
-
 end

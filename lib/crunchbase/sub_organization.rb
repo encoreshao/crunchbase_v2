@@ -4,6 +4,7 @@
 
 module Crunchbase
   class SubOrganization < CBEntity
+    
     RESOURCE_LIST = 'sub_organizations'
 
     attr_reader :type_name, :name, :path, :permalink, :created_at, :updated_at

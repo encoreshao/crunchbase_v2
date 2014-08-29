@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Competitor < CBEntity
+    
     RESOURCE_LIST = 'competitors'
     
     attr_reader :type_name, :name, :last_name, :path, :permalink, :title, :started_on, :ended_on, 
@@ -22,5 +23,4 @@ module Crunchbase
     end
 
   end
-
 end

@@ -4,6 +4,7 @@
 
 module Crunchbase
   class CurrentTeam < CBEntity
+    
     RESOURCE_LIST = 'current_team'
 
     attr_reader :type_name, :name, :first_name, :last_name, :path, :permalink, :title,
@@ -24,5 +25,4 @@ module Crunchbase
     end
 
   end
-
 end

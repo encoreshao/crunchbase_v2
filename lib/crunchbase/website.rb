@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Website < CBEntity
+
     RESOURCE_NAME = 'website'
     RESOURCE_LIST = 'websites'
 
@@ -16,5 +17,6 @@ module Crunchbase
       @created_at     = Time.at(json['created_at']).utc
       @updated_at     = Time.at(json['updated_at']).utc
     end
+    
   end
 end

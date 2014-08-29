@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Office < CBEntity
+
     RESOURCE_LIST = 'offices'
 
     attr_reader :type_name, :name, :street_1, :street_2, :city, :city_uuid, :city_path, 
@@ -24,5 +25,4 @@ module Crunchbase
     end
 
   end
-
 end

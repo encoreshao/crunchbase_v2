@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Person < CBEntity
+    
     RESOURCE_NAME = 'person'
     RESOURCE_LIST = 'people'
     
@@ -27,5 +28,4 @@ module Crunchbase
     end
 
   end
-
 end

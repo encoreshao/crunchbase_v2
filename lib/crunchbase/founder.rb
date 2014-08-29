@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Founder < CBEntity
+    
     RESOURCE_LIST = 'founders'
     
     attr_reader :type_name, :name, :path, :permalink, :created_at, :updated_at

@@ -4,6 +4,7 @@
 
 module Crunchbase
   class BoardMembersAndAdvisor < CBEntity
+    
     RESOURCE_LIST = 'board_members_and_advisors'
 
     attr_reader :type_name, :name, :first_name, :last_name, :title, :started_on, :ended_on, 

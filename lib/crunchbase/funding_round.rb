@@ -4,6 +4,7 @@
 
 module Crunchbase
   class FundingRound < CBEntity
+    
     RESOURCE_NAME = 'funding-round'
     RESOURCE_LIST = 'funding_rounds'
 
@@ -65,5 +66,4 @@ module Crunchbase
     end
 
   end
-
 end

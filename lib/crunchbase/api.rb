@@ -11,8 +11,8 @@ end
 require 'timeout'
 
 module Crunchbase
-
   class API
+
     SUPPORTED_ENTITIES = ['organizations', 'organization', 'people', 'person', 'products', 'product', 'funding_rounds', 'funding-round', 'acquisition', 'ipo', 'fund-raise', 'locations', 'categories', 'offices', 'customers']
 
     @timeout_limit  = 60

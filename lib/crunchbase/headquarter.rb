@@ -4,6 +4,7 @@
 
 module Crunchbase
   class Headquarter < CBEntity
+    
     RESOURCE_LIST = 'headquarters'
 
     attr_reader :type_name, :name, :street_1, :street_2, :city, :city_uuid, :city_path, 
