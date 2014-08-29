@@ -1,4 +1,4 @@
-# encode: utf-8
+# encoding: utf-8
 
 # http://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors
 

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require "crunchbase/api"
 require "crunchbase/crunch_exception"
 require "crunchbase/cb_entity"

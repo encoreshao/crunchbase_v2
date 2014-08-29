@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'date'
 
 module Crunchbase
@@ -14,7 +15,6 @@ module Crunchbase
                 :created_at, :updated_at, :logo_url, :closed_on_day, :closed_on_month, 
                 :closed_on_year, :founded_on_day, :founded_on_month, :founded_on_year, 
                 :role_investor, :founded_on_trust_code
-
 
     attr_reader :past_teams, :sub_organizations, :current_teams, :acquisitions, :competitors, 
                 :offices, :headquarters, :funding_rounds, :categories, :customers, :investments, 
