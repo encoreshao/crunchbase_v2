@@ -1,20 +1,12 @@
 require File.join(File.dirname(__FILE__), "..", "spec_helper.rb")
 
 module Crunchbase
-  describe Customer do
+  describe Customer, :vcr  do
+    subject { Customer.lists_for_permalink("facebook") }
 
-    describe "advanced indexing" do
-      before(:all) do
-        @all_customers = Customer.lists_for_permalink("facebook")
-      end
+    it_has_behavior 'pagination'
+    it_behaves_like 'a container', 1
 
-      it "should pull from web api" do
-        @all_customers.per_page.should == 1000
-        @all_customers.current_page.should == 1
-        @all_customers.size.should == 1
-        @all_customers.items.count.should == 1
-      end
-    end
-
+    its(:size) { should eq(1) }
   end
 end

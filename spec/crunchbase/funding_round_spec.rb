@@ -1,26 +1,20 @@
 require File.join(File.dirname(__FILE__), "..", "spec_helper.rb")
 
 module Crunchbase
-  describe FundingRound do
+  describe FundingRound, :vcr  do
+    describe 'a list' do
+      subject { FundingRound.lists_for_permalink("facebook") }
 
-    describe "advanced indexing" do
-      before(:all) do
-        @all_funding_rounds = FundingRound.lists_for_permalink("facebook")
-      end
+      it_has_behavior 'pagination'
+      it_behaves_like 'a container', 11
 
-      it "check the return results is correct" do
-        @all_funding_rounds.per_page.should == 1000
-        @all_funding_rounds.current_page.should == 1
-        @all_funding_rounds.size.should == 11
-        @all_funding_rounds.items.count.should == 11
-      end
-    end
-    
-    it "should pull from web api" do
-      funding_round = FundingRound.get("37bd05f961af726ba3c1b279da842805")
-
-      funding_round.permalink.should == '37bd05f961af726ba3c1b279da842805'
+      its(:size) { should eq(11) }
     end
 
+    describe 'an entity' do
+      subject { FundingRound.get("37bd05f961af726ba3c1b279da842805") }
+
+      its(:permalink) { should eq('37bd05f961af726ba3c1b279da842805') }
+    end
   end
 end
