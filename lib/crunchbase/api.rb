@@ -18,9 +18,9 @@ module Crunchbase
     @timeout_limit  = 60
     @redirect_limit = 2
     @version        = '2'
-    @base_url       = 'http://api.crunchbase.com'
-    @site_url       = "http://www.crunchbase.com"
-    @image_url      = "http://images.crunchbase.com/"
+    @base_url       = 'https://api.crunchbase.com'
+    @site_url       = "https://www.crunchbase.com"
+    @image_url      = "https://res.cloudinary.com/crunchbase-production/"
     @debug          = false
 
     # Must be overridden in subclasses
@@ -130,16 +130,19 @@ module Crunchbase
     def self.get_url_following_redirects(uri_str, limit = 10)
       raise CrunchException, 'HTTP redirect too deep' if limit == 0
 
-      url = URI.parse(uri_str)
-
+      uri = URI.parse(uri_str)
       if self.debug
-        length = (uri_str.length + 10)
-        puts "*"*length
-        puts "***  #{url}  ***"
-        puts "*"*length
+        puts "*"*120
+        puts "***  #{uri}  ***"
+        puts "*"*120
       end
 
-      response = Net::HTTP.start(url.host, url.port) { |http| http.get(url.request_uri) }
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true if uri.scheme == 'https'
+      response = http.start do |h|
+        h.request Net::HTTP::Get.new(uri.request_uri)
+      end
+
       case response
         when Net::HTTPSuccess, Net::HTTPNotFound
           response.body
