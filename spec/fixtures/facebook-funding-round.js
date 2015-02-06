@@ -2,7 +2,7 @@
  "metadata": {
   "version": 2,
   "www_path_prefix": "http://www.crunchbase.com/",
-  "api_path_prefix": "http://api.crunchbase.com/v/2/",
+  "api_path_prefix": "https://api.crunchbase.com/v/2/",
   "image_path_prefix": "http://images.crunchbase.com/"
  },
  "data": {
@@ -29,7 +29,7 @@
    "investments": {
     "paging": {
      "total_items": 2,
-     "first_page_url": "http://api.crunchbase.com/v/2/funding-round/37bd05f961af726ba3c1b279da842805/investments",
+     "first_page_url": "https://api.crunchbase.com/v/2/funding-round/37bd05f961af726ba3c1b279da842805/investments",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -60,7 +60,7 @@
    "funded_organization": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/funding-round/37bd05f961af726ba3c1b279da842805/funded_organization",
+     "first_page_url": "https://api.crunchbase.com/v/2/funding-round/37bd05f961af726ba3c1b279da842805/funded_organization",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -76,7 +76,7 @@
    "news": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/funding-round/37bd05f961af726ba3c1b279da842805/news",
+     "first_page_url": "https://api.crunchbase.com/v/2/funding-round/37bd05f961af726ba3c1b279da842805/news",
      "sort_order": "created_at DESC"
     },
     "items": [

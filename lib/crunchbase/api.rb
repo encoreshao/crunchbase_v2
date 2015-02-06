@@ -97,7 +97,7 @@ module Crunchbase
     end
 
     # Searches for a permalink in a particular category.
-    # Demo: http://api.crunchbase.com/v/2/organization/facebook/offices?user_key=key
+    # Demo: https://api.crunchbase.com/v/2/organization/facebook/offices?user_key=key
     def self.lists_for_permalink(permalink, category, options)
       options[:page]  = 1 if options[:page].nil?
       options[:order] = ORDER_CREATED_AT_ASC if options[:order].nil?

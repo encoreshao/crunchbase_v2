@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organization/facebook/products
+# https://api.crunchbase.com/v/2/organization/facebook/products
 
 require 'date'
 

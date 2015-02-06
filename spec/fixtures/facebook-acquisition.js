@@ -2,7 +2,7 @@
  "metadata": {
   "version": 2,
   "www_path_prefix": "http://www.crunchbase.com/",
-  "api_path_prefix": "http://api.crunchbase.com/v/2/",
+  "api_path_prefix": "https://api.crunchbase.com/v/2/",
   "image_path_prefix": "http://images.crunchbase.com/"
  },
  "data": {
@@ -30,7 +30,7 @@
    "acquirer": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/acquisition/7a3d7915ed43073c0e4b5b0d7601def8/acquirer",
+     "first_page_url": "https://api.crunchbase.com/v/2/acquisition/7a3d7915ed43073c0e4b5b0d7601def8/acquirer",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -46,7 +46,7 @@
    "acquiree": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/acquisition/7a3d7915ed43073c0e4b5b0d7601def8/acquiree",
+     "first_page_url": "https://api.crunchbase.com/v/2/acquisition/7a3d7915ed43073c0e4b5b0d7601def8/acquiree",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -62,7 +62,7 @@
    "news": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/acquisition/7a3d7915ed43073c0e4b5b0d7601def8/news",
+     "first_page_url": "https://api.crunchbase.com/v/2/acquisition/7a3d7915ed43073c0e4b5b0d7601def8/news",
      "sort_order": "created_at DESC"
     },
     "items": [

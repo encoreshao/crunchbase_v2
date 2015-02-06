@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organization/facebook/websites
+# https://api.crunchbase.com/v/2/organization/facebook/websites
 
 module Crunchbase
   class Website < CBEntity

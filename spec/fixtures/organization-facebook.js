@@ -2,7 +2,7 @@
  "metadata": {
   "version": 2,
   "www_path_prefix": "http://www.crunchbase.com/",
-  "api_path_prefix": "http://api.crunchbase.com/v/2/",
+  "api_path_prefix": "https://api.crunchbase.com/v/2/",
   "image_path_prefix": "http://images.crunchbase.com/"
  },
  "data": {
@@ -39,7 +39,7 @@
    "past_team": {
     "paging": {
      "total_items": 186,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/past_team",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/past_team",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -128,7 +128,7 @@
    "board_members_and_advisors": {
     "paging": {
      "total_items": 12,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -209,7 +209,7 @@
    "sub_organizations": {
     "paging": {
      "total_items": 2,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/sub_organizations",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/sub_organizations",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -232,7 +232,7 @@
    "current_team": {
     "paging": {
      "total_items": 137,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/current_team",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/current_team",
      "sort_order": "custom"
     },
     "items": [
@@ -313,7 +313,7 @@
    "acquisitions": {
     "paging": {
      "total_items": 49,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/acquisitions",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/acquisitions",
      "sort_order": "announced_on? desc"
     },
     "items": [
@@ -386,7 +386,7 @@
    "competitors": {
     "paging": {
      "total_items": 9,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/competitors",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/competitors",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -451,7 +451,7 @@
    "offices": {
     "paging": {
      "total_items": 3,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/offices",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/offices",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -499,7 +499,7 @@
    "headquarters": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/headquarters",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/headquarters",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -521,7 +521,7 @@
    "funding_rounds": {
     "paging": {
      "total_items": 11,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/funding_rounds",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/funding_rounds",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -586,7 +586,7 @@
    "categories": {
     "paging": {
      "total_items": 7,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/categories",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/categories",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -651,7 +651,7 @@
    "customers": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/customers",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/customers",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -667,7 +667,7 @@
    "investments": {
     "paging": {
      "total_items": 3,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/investments",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/investments",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -718,7 +718,7 @@
    "founders": {
     "paging": {
      "total_items": 5,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/founders",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/founders",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -762,7 +762,7 @@
    "ipo": {
     "paging": {
      "total_items": 3,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/ipo",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/ipo",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -792,7 +792,7 @@
    "products": {
     "paging": {
      "total_items": 17,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/products",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/products",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -857,7 +857,7 @@
    "primary_image": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/primary_image",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/primary_image",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -873,7 +873,7 @@
    "images": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/images",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/images",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -889,7 +889,7 @@
    "websites": {
     "paging": {
      "total_items": 6,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/websites",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/websites",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -940,7 +940,7 @@
    "news": {
     "paging": {
      "total_items": 3113,
-     "first_page_url": "http://api.crunchbase.com/v/2/organization/facebook/news",
+     "first_page_url": "https://api.crunchbase.com/v/2/organization/facebook/news",
      "sort_order": "created_at DESC"
     },
     "items": [

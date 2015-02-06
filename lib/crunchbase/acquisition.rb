@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organization/facebook/acquisitions
+# https://api.crunchbase.com/v/2/organization/facebook/acquisitions
 
 module Crunchbase
   class Acquisition < CBEntity

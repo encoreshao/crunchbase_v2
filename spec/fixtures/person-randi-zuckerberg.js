@@ -2,7 +2,7 @@
  "metadata": {
   "version": 2,
   "www_path_prefix": "http://www.crunchbase.com/",
-  "api_path_prefix": "http://api.crunchbase.com/v/2/",
+  "api_path_prefix": "https://api.crunchbase.com/v/2/",
   "image_path_prefix": "http://images.crunchbase.com/"
  },
  "data": {
@@ -26,7 +26,7 @@
    "degrees": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/degrees",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/degrees",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -44,7 +44,7 @@
    "experience": {
     "paging": {
      "total_items": 2,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/experience",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/experience",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -67,7 +67,7 @@
    "primary_affiliation": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/primary_affiliation",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/primary_affiliation",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -82,7 +82,7 @@
    "investments": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/investments",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/investments",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -105,7 +105,7 @@
    "advisor_at": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/advisor_at",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/advisor_at",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -118,7 +118,7 @@
    "founded_companies": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/founded_companies",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/founded_companies",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -134,7 +134,7 @@
    "primary_image": {
     "paging": {
      "total_items": 1,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/primary_image",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/primary_image",
      "sort_order": "created_at DESC"
     },
     "items": [
@@ -150,7 +150,7 @@
    "news": {
     "paging": {
      "total_items": 14,
-     "first_page_url": "http://api.crunchbase.com/v/2/person/randi-zuckerberg/news",
+     "first_page_url": "https://api.crunchbase.com/v/2/person/randi-zuckerberg/news",
      "sort_order": "created_at DESC"
     },
     "items": [

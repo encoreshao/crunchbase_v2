@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organization/facebook/past_team
+# https://api.crunchbase.com/v/2/organization/facebook/past_team
 
 require 'date'
 

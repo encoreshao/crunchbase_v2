@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# http://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors
+# https://api.crunchbase.com/v/2/organization/facebook/board_members_and_advisors
 
 module Crunchbase
   class BoardMembersAndAdvisor < CBEntity
