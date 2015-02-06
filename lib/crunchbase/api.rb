@@ -13,7 +13,7 @@ require 'timeout'
 module Crunchbase
   class API
 
-    SUPPORTED_ENTITIES = ['organizations', 'organization', 'people', 'person', 'products', 'product', 'funding_rounds', 'funding-round', 'acquisition', 'ipo', 'fund-raise', 'locations', 'categories', 'offices', 'customers']
+    SUPPORTED_ENTITIES = ['organizations', 'organization', 'people', 'person', 'products', 'product', 'funding_rounds', 'funding-round', 'acquisition', 'ipo', 'fund-raise', 'locations', 'categories', 'offices', 'customers', 'degrees', 'experience', 'primary_affiliation', 'videos', 'founded_companies', 'primary_location', 'advisor_at']
 
     @timeout_limit  = 60
     @redirect_limit = 2
@@ -97,13 +97,27 @@ module Crunchbase
     end
 
     # Searches for a permalink in a particular category.
-    # Demo: https://api.crunchbase.com/v/2/organization/facebook/offices?user_key=key
+    # Demo: https://api.crunchbase.com/v/2/organization/#{organization-permalink}/offices?user_key=key
     def self.lists_for_permalink(permalink, category, options)
+      lists_for_category('organization', permalink, category, options)
+    end
+
+    # Demo: https://api.crunchbase.com/v/2/person/#{person-permalink}/offices?user_key=key
+    def self.lists_for_person_permalink(permalink, category, options)
+      lists_for_category('person', permalink, category, options)
+    end
+
+    class << self
+      alias_method :category_lists_by_organization, :lists_for_permalink
+      alias_method :category_lists_by_person, :lists_for_person_permalink
+    end
+
+    def self.lists_for_category(classify_name, permalink, category, options)
       options[:page]  = 1 if options[:page].nil?
       options[:order] = ORDER_CREATED_AT_ASC if options[:order].nil?
       model_name      = options.delete(:model_name)
 
-      uri = api_url + "organization/#{permalink}/#{category}?#{collect_parameters(options)}"
+      uri = api_url + "#{classify_name}/#{permalink}/#{category}?#{collect_parameters(options)}"
 
       Search.new options, get_json_response(uri), model_name
     end

@@ -3,7 +3,7 @@
 module Crunchbase
   class CBEntity
 
-    RELATIONSHIPS = %w[ Crunchbase::Ipo Crunchbase::Product Crunchbase::SubOrganization  Crunchbase::FundingRound Crunchbase::Founder Crunchbase::Customer Crunchbase::Competitor Crunchbase::Acquisition ]
+    RELATIONSHIPS = %w[ Crunchbase::Ipo Crunchbase::Product Crunchbase::SubOrganization  Crunchbase::FundingRound Crunchbase::Founder Crunchbase::Customer Crunchbase::Competitor Crunchbase::Acquisition Crunchbase::Degree Crunchbase::PrimaryAffiliation Crunchbase::Experience, Crunchbase::FoundedCompany Crunchbase::Video Crunchbase::PrimaryLocation Crunchbase::AdvisorAt ]
     
     # Factory method to return an instance from a permalink  
     def self.get(permalink)
@@ -22,6 +22,18 @@ module Crunchbase
       options[:model_name] = (RELATIONSHIPS.include?(self.name) ? Relationship : self)
       
       return API.lists_for_permalink(permalink, self::RESOURCE_LIST, options)
+    end
+
+    def self.lists_for_person_permalink(permalink, options={})
+      options[:model_name] = (RELATIONSHIPS.include?(self.name) ? Relationship : self)
+      
+      return API.lists_for_person_permalink(permalink, self::RESOURCE_LIST, options)
+    end
+
+    def self.category_lists_by_permalink(permalink, classify_name, options={})
+      options[:model_name]  = (RELATIONSHIPS.include?(self.name) ? Relationship : self)
+
+      return API.lists_for_category(classify_name, permalink, self::RESOURCE_LIST, options)
     end
 
     def fetch
@@ -64,6 +76,13 @@ module Crunchbase
       when 'Customer' then [Crunchbase::Customer, 'organization']
       when 'Competitor' then [Crunchbase::Competitor, 'organization']
       when 'Acquisition' then [Crunchbase::Acquisition, 'acquisition']
+      when 'Degree' then [Crunchbase::Degree, 'degree']
+      when 'Experience' then [Crunchbase::Experience, 'experience']
+      when 'PrimaryAffiliation' then [Crunchbase::PrimaryAffiliation, 'primary_affiliation']
+      when 'Video' then [Crunchbase::Video, 'video']
+      when 'FoundedCompany' then [Crunchbase::FoundedCompany, 'founded_company']
+      when 'AdvisorAt' then [Crunchbase::AdvisorAt, 'advisor_at']
+      when 'PrimaryLocation' then [Crunchbase::PrimaryLocation, 'primary_location']
       else
         []
       end

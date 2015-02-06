@@ -28,6 +28,13 @@ require "crunchbase/search"
 require "crunchbase/search_result"
 require "crunchbase/website"
 require "crunchbase/board_members_and_advisor"
+require "crunchbase/degree"
+require "crunchbase/experience"
+require "crunchbase/primary_affiliation"
+require "crunchbase/advisor_at"
+require "crunchbase/founded_company"
+require "crunchbase/primary_location"
+require "crunchbase/video"
 require "crunchbase/version"
 
 
