@@ -26,7 +26,11 @@ module Crunchbase
       @funding_type   = properties['funding_type']
       @permalink      = properties['permalink']
       @money_raised_usd   = properties['money_raised_usd']
-      @announced_on       = properties['announced_on'] && DateTime.parse(properties['announced_on'])
+      if (properties['announced_on'].blank? || properties['announced_on'] == "0000-01-01")
+        @announced_on = nil
+      else
+        @announced_on = DateTime.parse(properties['announced_on'])
+      end
       @announced_on_trust_code    = properties['announced_on_trust_code']
       @canonical_currency_code    = properties['canonical_currency_code']
       @money_raised               = properties['money_raised']
