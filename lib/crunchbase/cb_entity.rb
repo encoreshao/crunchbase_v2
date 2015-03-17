@@ -15,7 +15,7 @@ module Crunchbase
     def self.search(options)
       return [] unless self == Crunchbase::Organization
 
-      return Search.new options, API.search( options, self::RESOURCE_LIST )
+      return Search.new options, API.search( options, self::RESOURCE_LIST ), SearchResult
     end
     
     def self.lists_for_permalink(permalink, options={})

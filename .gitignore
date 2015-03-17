@@ -23,3 +23,4 @@ mkmf.log
 
 *.swp
 spec/apikey.yml
+spec/fixtures/vcr_cassettes/*

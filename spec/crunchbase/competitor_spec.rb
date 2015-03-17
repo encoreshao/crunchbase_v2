@@ -1,19 +1,10 @@
 require File.join(File.dirname(__FILE__), "..", "spec_helper.rb")
 
 module Crunchbase
-  describe Competitor do
-    
-    describe "advanced indexing" do
-      before(:all) do
-        @all_competitors = Competitor.lists_for_permalink("facebook")
-      end
+  describe Competitor, :vcr  do
+    subject { Competitor.lists_for_permalink("facebook") }
 
-      it "should pull from web api" do
-        @all_competitors.per_page.should == 1000
-        @all_competitors.current_page.should == 1
-        @all_competitors.size.should == 9
-      end
-    end
-    
+    it_has_behavior 'pagination'
+    its(:size) { should eq(9) }
   end
 end
