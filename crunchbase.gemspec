@@ -6,8 +6,8 @@ require 'crunchbase/version'
 Gem::Specification.new do |spec|
   spec.name          = "crunchbase_v2"
   spec.version       = Crunchbase::VERSION
-  spec.authors       = ["Encore Shao"]
-  spec.email         = ["encore.shao@gmail.com"]
+  spec.authors       = ["Encore Shao", "Mark", "Ladislav Martincik"]
+  spec.email         = ["encore.shao@gmail.com", "ladislav.martincik@gmail.com"]
   spec.summary       = %q{ Ruby wrapper for Crunchbase API version 2 }
   spec.description   = %q{ Ruby wrapper for Crunchbase API version 2 }
   spec.homepage      = "https://github.com/encoreshao/crunchbase_v2"
