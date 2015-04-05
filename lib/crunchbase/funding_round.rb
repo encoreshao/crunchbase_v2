@@ -18,15 +18,16 @@ module Crunchbase
     attr_reader :investments_total_items, :funded_organizations_total_items, :new_items_total_items
 
     def initialize(json)
-      @type_name      = json['type']
-      properties      = json['properties']
-      relationships   = json['relationships']
+      @type_name          = json['type']
+      properties          = json['properties']
+      relationships       = json['relationships']
 
-      @name           = properties['name']
-      @funding_type   = properties['funding_type']
-      @permalink      = properties['permalink']
+      @name               = properties['name']
+      @funding_type       = properties['funding_type']
+      @permalink          = properties['permalink']
+      @series             = properties['series']
       @money_raised_usd   = properties['money_raised_usd']
-      @series   = properties['series']
+      
       if (properties['announced_on'].blank? || properties['announced_on'] == "0000-01-01")
         @announced_on = nil
       else
