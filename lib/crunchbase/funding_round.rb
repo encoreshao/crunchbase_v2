@@ -10,7 +10,7 @@ module Crunchbase
 
     attr_reader :type_name, :name, :post_money_valuation_currency_code, :permalink, :funding_type, 
                 :money_raised_usd, :announced_on_trust_code, :money_raised, 
-                :money_raised_currency_code, :announced_on, :canonical_currency_code,
+                :money_raised_currency_code, :series, :announced_on, :canonical_currency_code,
                 :created_at, :updated_at
 
     attr_reader :investments, :funded_organizations, :new_items
@@ -26,6 +26,7 @@ module Crunchbase
       @funding_type   = properties['funding_type']
       @permalink      = properties['permalink']
       @money_raised_usd   = properties['money_raised_usd']
+      @series   = properties['series']
       if (properties['announced_on'].blank? || properties['announced_on'] == "0000-01-01")
         @announced_on = nil
       else
