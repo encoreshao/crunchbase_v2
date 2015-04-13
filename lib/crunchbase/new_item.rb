@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/news
+# https://api.crunchbase.com/v/2/organization/#{permalink}/news
 
 module Crunchbase
   class NewItem < CBEntity

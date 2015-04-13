@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/current_team
+# https://api.crunchbase.com/v/2/organization/#{permalink}/current_team
 
 module Crunchbase
   class CurrentTeam < CBEntity

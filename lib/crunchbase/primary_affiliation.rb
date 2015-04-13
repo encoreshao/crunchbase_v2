@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/person/#{permalink}/primary_affiliation?user_key=key
+# https://api.crunchbase.com/v/2/person/#{permalink}/primary_affiliation?user_key=#{user_key}
 
 module Crunchbase
   class PrimaryAffiliation < CBEntity

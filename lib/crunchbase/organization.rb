@@ -19,7 +19,7 @@ module Crunchbase
     attr_reader :past_teams, :sub_organizations, :current_teams, :acquisitions, :competitors, 
                 :offices, :headquarters, :funding_rounds, :categories, :customers, :investments, 
                 :founders, :ipos, :products, :primary_images, :images, :websites, :new_items, 
-                :board_members_and_advisors
+                :board_members_and_advisors, :acquired_bies, :investors
 
     attr_reader :past_teams_total_items, :sub_organizations_total_items, :current_teams_total_items, 
                 :acquisitions_total_items, :competitors_total_items, :offices_total_items, 
@@ -27,7 +27,8 @@ module Crunchbase
                 :customers_total_items, :investments_total_items, :founders_total_items, 
                 :ipos_total_items, :products_total_items, :primary_images_total_items, 
                 :images_total_items, :websites_total_items, :new_items_total_items, 
-                :board_members_and_advisors_total_items
+                :board_members_and_advisors_total_items, :acquired_bies_total_items, 
+                :investors_total_items
 
 
     def initialize(json)
@@ -62,6 +63,7 @@ module Crunchbase
       @number_of_employees    = properties['number_of_employees']
       @stock_symbol           = properties['stock_symbol']
       @stock_exchange         = properties['stock_exchange']
+      @investors_list         = properties['investors']
       @created_at             = Time.at(properties['created_at']).utc
       @updated_at             = Time.at(properties['updated_at']).utc
 
@@ -84,6 +86,7 @@ module Crunchbase
       @websites_list          = relationships['websites']
       @new_items_list         = relationships['news']
       @board_members_and_advisors_list  = relationships['board_members_and_advisors']
+      @acquired_bies_list     = relationships['acquired_by']
     end
 
     # ================================================================
@@ -180,6 +183,14 @@ module Crunchbase
       @board_members_and_advisors ||= BoardMembersAndAdvisor.array_from_list(@board_members_and_advisors_list)
     end
 
+    def acquired_bies
+      @acquired_bies ||= Relationship.array_from_list(@acquired_bies_list)
+    end
+
+    def investors
+      @investors ||= OrganizationInvestor.parsing_from_list(@investors_list)
+    end
+
     # Get all relationship total_items_count
     def past_teams_total_items
       @past_teams_total_items ||= PastTeam.total_items_from_list(@past_teams_list)
@@ -255,6 +266,14 @@ module Crunchbase
 
     def board_members_and_advisors_total_items
       @board_members_and_advisors_total_items ||= BoardMembersAndAdvisor.total_items_from_list(@board_members_and_advisors_list)
+    end
+
+    def acquired_bies_total_items
+      @acquired_bies_total_items ||= Acquisition.total_items_from_list(@acquired_bies_list)
+    end
+
+    def investors_total_items
+      @investors_total_items ||= @investors_list.count
     end
 
   end

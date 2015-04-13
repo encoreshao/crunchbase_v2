@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/customers
+# https://api.crunchbase.com/v/2/organization/#{permalink}/customers
 
 module Crunchbase
   class Customer < CBEntity

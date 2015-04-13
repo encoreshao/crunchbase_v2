@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/investments
+# https://api.crunchbase.com/v/2/organization/#{permalink}/investments
 
 module Crunchbase
   class Investment < CBEntity

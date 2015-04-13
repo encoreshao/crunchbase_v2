@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/founders?user_key=key
+# https://api.crunchbase.com/v/2/organization/#{permalink}/founders?user_key=key
 
 module Crunchbase
   class Founder < CBEntity

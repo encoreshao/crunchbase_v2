@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/offices
+# https://api.crunchbase.com/v/2/organization/#{permalink}/offices
 
 module Crunchbase
   class Office < CBEntity

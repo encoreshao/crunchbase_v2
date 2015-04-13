@@ -34,6 +34,7 @@ require "crunchbase/primary_affiliation"
 require "crunchbase/advisor_at"
 require "crunchbase/founded_company"
 require "crunchbase/primary_location"
+require "crunchbase/organization_investor"
 require "crunchbase/video"
 require "crunchbase/version"
 

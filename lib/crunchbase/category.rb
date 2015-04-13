@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/categories
+# https://api.crunchbase.com/v/2/organization/#{permalink}/categories
 
 module Crunchbase
   class Category < CBEntity

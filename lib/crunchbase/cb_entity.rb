@@ -3,7 +3,7 @@
 module Crunchbase
   class CBEntity
 
-    RELATIONSHIPS = %w[ Crunchbase::Ipo Crunchbase::Product Crunchbase::SubOrganization  Crunchbase::FundingRound Crunchbase::Founder Crunchbase::Customer Crunchbase::Competitor Crunchbase::Acquisition Crunchbase::Degree Crunchbase::PrimaryAffiliation Crunchbase::Experience, Crunchbase::FoundedCompany Crunchbase::Video Crunchbase::PrimaryLocation Crunchbase::AdvisorAt ]
+    RELATIONSHIPS = %w[ Crunchbase::Ipo Crunchbase::Product Crunchbase::SubOrganization  Crunchbase::FundingRound Crunchbase::Founder Crunchbase::Customer Crunchbase::Competitor Crunchbase::Acquisition Crunchbase::Degree Crunchbase::PrimaryAffiliation Crunchbase::Experience, Crunchbase::FoundedCompany Crunchbase::Video Crunchbase::PrimaryLocation Crunchbase::AdvisorAt Crunchbase::OrganizationInvestor ]
     
     # Factory method to return an instance from a permalink  
     def self.get(permalink)
@@ -53,6 +53,14 @@ module Crunchbase
       return [] if list.nil?
 
       list['items'].map do |l|
+        self.new l
+      end
+    end
+
+    def self.parsing_from_list(list)
+      return [] if list.nil?
+      
+      list.map do |l|
         self.new l
       end
     end

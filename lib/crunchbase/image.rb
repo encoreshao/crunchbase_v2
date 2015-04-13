@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/organization/facebook/images
+# https://api.crunchbase.com/v/2/organization/#{permalink}/images
 
 module Crunchbase
   class Image < CBEntity

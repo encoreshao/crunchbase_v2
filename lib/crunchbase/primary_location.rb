@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# https://api.crunchbase.com/v/2/person/reed-hastings/primary_location
+# https://api.crunchbase.com/v/2/person/#{permalink}/primary_location
 
 module Crunchbase
   class PrimaryLocation < CBEntity
