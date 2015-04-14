@@ -9,7 +9,8 @@ module Crunchbase
 
     attr_reader :announced_on, :announced_on_trust_code, :price_currency_code, 
                 :permalink, :name, :payment_type, :price, :disposition_of_acquired, 
-                :acquisition_type, :acquisition_status, :price_usd, :created_at, :updated_at
+                :acquisition_type, :acquisition_status, :price_usd, :created_at, :updated_at, 
+                :announced_on_year, :announced_on_day, :announced_on_month
 
     attr_reader :acquirers, :acquirees, :new_items
 
@@ -31,6 +32,9 @@ module Crunchbase
       @acquisition_type         = properties['acquisition_type']
       @acquisition_status       = properties['acquisition_status']
       @price_usd                = properties['price_usd']
+      @announced_on_year        = properties['announced_on_year']
+      @announced_on_day         = properties['announced_on_day']
+      @announced_on_month       = properties['announced_on_month']
       @created_at               = Time.at(properties['created_at']).utc
       @updated_at               = Time.at(properties['updated_at']).utc
 

@@ -11,7 +11,7 @@ module Crunchbase
     attr_reader :type_name, :name, :post_money_valuation_currency_code, :permalink, :funding_type, 
                 :money_raised_usd, :announced_on_trust_code, :money_raised, 
                 :money_raised_currency_code, :series, :announced_on, :canonical_currency_code,
-                :created_at, :updated_at
+                :created_at, :updated_at, :announced_on_year, :announced_on_day, :announced_on_month
 
     attr_reader :investments, :funded_organizations, :new_items
 
@@ -33,6 +33,10 @@ module Crunchbase
       else
         @announced_on = DateTime.parse(properties['announced_on'])
       end
+      @announced_on_year    = properties['announced_on_year']
+      @announced_on_month   = properties['announced_on_month']
+      @announced_on_day     = properties['announced_on_day']
+
       @announced_on_trust_code    = properties['announced_on_trust_code']
       @canonical_currency_code    = properties['canonical_currency_code']
       @money_raised               = properties['money_raised']

@@ -12,7 +12,7 @@ module Crunchbase
 
     attr_reader :type_name, :lifecycle_stage, :owner_id, :short_description, :permalink, :name, 
                 :homepage_url, :description, :launched_on, :launched_on_trust_code, 
-                :created_at, :updated_at
+                :created_at, :updated_at, :owner_name, :owner_path
 
     attr_reader :primary_images, :images, :websites, :new_items
     attr_reader :primary_images_total_items, :images_total_items, :websites_total_items, 
@@ -25,7 +25,9 @@ module Crunchbase
       
       @name               = properties['name']
       @lifecycle_stage    = properties['lifecycle_stage']
-      @owner_id           = properties['owner_id']
+      @owner_id           = properties['owner_id'] # Maybe removed
+      @owner_name         = properties['owner_name']
+      @owner_path         = properties['owner_path']
       @short_description  = properties['short_description']
       @permalink          = properties['permalink']
       @homepage_url       = properties['homepage_url']

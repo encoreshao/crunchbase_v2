@@ -8,7 +8,7 @@ module Crunchbase
     RESOURCE_LIST = 'current_team'
 
     attr_reader :type_name, :name, :first_name, :last_name, :path, :permalink, :title,
-                :started_on, :ended_on, :created_at, :updated_at
+                :started_on, :ended_on, :created_at, :updated_at, :started_on_trust_code
 
     def initialize(json)
       @type_name    = json['type']
@@ -22,6 +22,7 @@ module Crunchbase
       @ended_on     = json['ended_on']
       @created_at   = Time.at(json['created_at']).utc
       @updated_at   = Time.at(json['updated_at']).utc
+      @started_on_trust_code = json['started_on_trust_code']
     end
 
   end
