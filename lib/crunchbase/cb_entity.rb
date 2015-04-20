@@ -53,16 +53,16 @@ module Crunchbase
       return [] if list.nil?
 
       list['items'].map do |l|
-        self.new l
-      end
+        self.new l if l.kind_of?(Hash)
+      end.compact
     end
 
     def self.parsing_from_list(list)
       return [] if list.nil?
       
       list.map do |l|
-        self.new l
-      end
+        self.new l if l.kind_of?(Hash)
+      end.compact
     end
 
     def self.total_items_from_list(list)

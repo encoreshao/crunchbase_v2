@@ -14,7 +14,8 @@ module Crunchbase
                 :number_of_employees, :stock_symbol, :stock_exchange, :uuid, :closed_on_trust_code, 
                 :created_at, :updated_at, :logo_url, :closed_on_day, :closed_on_month, 
                 :closed_on_year, :founded_on_day, :founded_on_month, :founded_on_year, 
-                :role_investor, :founded_on_trust_code, :phone_number
+                :role_investor, :founded_on_trust_code, :phone_number, :num_employees_max, 
+                :num_employees_min, :secondary_role_for_profit
 
     attr_reader :past_teams, :sub_organizations, :current_teams, :acquisitions, :competitors, 
                 :offices, :headquarters, :funding_rounds, :categories, :customers, :investments, 
@@ -63,9 +64,13 @@ module Crunchbase
       @number_of_employees    = properties['number_of_employees']
       @stock_symbol           = properties['stock_symbol']
       @stock_exchange         = properties['stock_exchange']
+      @num_employees_max      = properties['num_employees_max']
+      @num_employees_min      = properties['num_employees_min']
       @investors_list         = properties['investors']
       @created_at             = Time.at(properties['created_at']).utc
       @updated_at             = Time.at(properties['updated_at']).utc
+      
+      @secondary_role_for_profit = properties['secondary_role_for_profit']
 
       @past_teams_list        = relationships['past_team']
       @sub_organizations_list = relationships['sub_organizations']

@@ -11,7 +11,9 @@ module Crunchbase
     attr_reader :type_name, :name, :post_money_valuation_currency_code, :permalink, :funding_type, 
                 :money_raised_usd, :announced_on_trust_code, :money_raised, 
                 :money_raised_currency_code, :series, :announced_on, :canonical_currency_code,
-                :created_at, :updated_at, :announced_on_year, :announced_on_day, :announced_on_month
+                :created_at, :updated_at, :announced_on_year, :announced_on_day, :announced_on_month, 
+                :pre_money_valuation_currency_code, :pre_money_valuation_usd, :pre_money_valuation, 
+                :post_money_valuation_usd, :target_money_raised_usd
 
     attr_reader :investments, :funded_organizations, :new_items
 
@@ -44,6 +46,12 @@ module Crunchbase
       @updated_at                 = Time.at(properties['updated_at']).utc
       @money_raised_currency_code           = properties['money_raised_currency_code']
       @post_money_valuation_currency_code   = properties['post_money_valuation_currency_code']
+
+      @post_money_valuation_usd   = properties['post_money_valuation_usd']
+      @target_money_raised_usd    = properties['target_money_raised_usd']
+      @pre_money_valuation_usd    = properties['pre_money_valuation_usd']
+      @pre_money_valuation        = properties['pre_money_valuation']
+      @pre_money_valuation_currency_code   = properties['pre_money_valuation_currency_code']
 
       @investments_list           = relationships['investments']
       @funded_organizations_list  = relationships['funded_organization']
