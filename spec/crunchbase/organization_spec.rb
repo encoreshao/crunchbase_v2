@@ -26,8 +26,14 @@ module Crunchbase
     its(:new_items_total_items) { should eq(3118) }
     its(:board_members_and_advisors_total_items) { should eq(12) }
 
-    describe '.search' do
+    describe 'search by domain' do
       subject { Organization.search({ domain_name: "facebook.com", organization_types: 'company' }) }
+
+      it_has_behavior 'pagination'
+    end
+
+    describe 'search by query' do
+      subject { Organization.search({ query: "youtube" }) }
 
       it_has_behavior 'pagination'
     end
