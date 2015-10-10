@@ -1,11 +1,8 @@
 = Crunchbase API Version 2
 
-Ruby API wrapper for [Crunchbase API doc][v2doc].
+Ruby API wrapper for [Crunchbase API doc](https://developer.crunchbase.com/docs).
 
-If you are using Crunchbase Version 3.0 API, Please use [crunchbase-ruby-library][v3gem]
-
-[v2doc]: https://developer.crunchbase.com/docs
-[v3gem]: https://github.com/encoreshao/crunchbase-ruby-library
+If you are using Crunchbase Version 3.0 API, Please use [crunchbase-ruby-library](https://github.com/encoreshao/crunchbase-ruby-library)
 
 == Installation
 
