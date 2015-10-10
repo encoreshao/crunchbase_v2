@@ -1,6 +1,9 @@
 = Crunchbase API
 
-Ruby API wrapper for [Crunchbase API](https://developer.crunchbase.com/docs) version 2.
+Ruby API wrapper for [Crunchbase API][https://developer.crunchbase.com/docs] version 2.
+
+If you are using Crunchbase Version 3.0 API, please use [crunchbase-ruby-library][https://github.com/encoreshao/crunchbase-ruby-library]
+
 
 == Installation
 
@@ -13,7 +16,7 @@ And then execute:
     $ bundle
 
 Or install it yourself as:
-  
+
     $ gem install crunchbase_v2
 
 == Usage Examples
@@ -45,14 +48,14 @@ Get information by the permalink, Example:
     response.competitors               Only return Top 8 items
     response.competitors_total_items   Return competitors total items count
     response.competitors.each do |e|
-      competitor = (a.fetch || 
+      competitor = (a.fetch ||
       puts competitor.name
     end
     OR
     Friendly relationship objects [ past_teams current_teams offices headquarters categories investments primary_images images websites new_items board_members_and_advisors ]
     response.websites
 
-If you want all competitors items, Please do: 
+If you want all competitors items, Please do:
 
     response = Crunchbase::Competitor.lists_for_permalink(response.permalink)
     response.per_page
@@ -61,26 +64,26 @@ If you want all competitors items, Please do:
     response.results           Return all competitors items
 
 === People
-    
+
   person = Crunchbase::Person.get( permalink )
 
-  #<Crunchbase::Person:0x007fc95bca3880 @type_name="Person" ..... > 
+  #<Crunchbase::Person:0x007fc95bca3880 @type_name="Person" ..... >
 
   people = Crunchbase::Person.list( page )
 
   people.results
- 
-  [ #<Crunchbase::SearchResult:0x007fd16ae18b40 ...>, 
-  #<Crunchbase::SearchResult:0x007fd16ae18870 ...>, 
-  #<Crunchbase::SearchResult:0x007fd16ae185a0 ...>, 
+
+  [ #<Crunchbase::SearchResult:0x007fd16ae18b40 ...>,
+  #<Crunchbase::SearchResult:0x007fd16ae18870 ...>,
+  #<Crunchbase::SearchResult:0x007fd16ae185a0 ...>,
   #<Crunchbase::SearchResult:0x007fd16ae182f8 ...>
   ...... ]
 
 
-=== How to use Location & Category .... 
-  
+=== How to use Location & Category ....
+
 Such as a Person
-    
+
 == Contributing
 
 Contributions are welcome. Note that in order to run the test suite, you need to
